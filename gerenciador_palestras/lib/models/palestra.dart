@@ -1,12 +1,14 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class Palestra {
+  final String? id;
   final String titulo;
   final String palestrante;
   final int vagasTotal;
   int vagasDisponiveis;
 
   Palestra({
+    this.id,
     required this.titulo,
     required this.palestrante,
     required this.vagasTotal,
@@ -16,6 +18,7 @@ class Palestra {
   factory Palestra.fromFirestore(DocumentSnapshot doc) {
     final data = doc.data() as Map<String, dynamic>;
     return Palestra(
+      id: doc.id,
       titulo: data['titulo'] ?? 'Título Desconhecido',
       palestrante: data['palestrante'] ?? 'Palestrante Desconhecido',
       vagasTotal: data['vagasTotal'] ?? 0,

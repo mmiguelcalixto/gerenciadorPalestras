@@ -1,4 +1,6 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:gerenciador_palestras/firebase_options.dart';
 import 'package:gerenciador_palestras/pages/tela_inicial.dart';
 
 Future<void> main() async {

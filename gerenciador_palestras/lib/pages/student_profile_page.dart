@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import '../models/estudante.dart';
+import 'package:gerenciador_palestras/models/estudante.dart';
 import 'student_lectures_page.dart';
 
 class StudentProfilePage extends StatefulWidget {
-  final Estudante estudante;
-  const StudentProfilePage({required this.estudante, super.key});
+  const StudentProfilePage({super.key});
 
   @override
-  _StudentProfilePageState createState() => _StudentProfilePageState();
+  StudentProfilePageState createState() => StudentProfilePageState();
 }
 
-class _StudentProfilePageState extends State<StudentProfilePage> {
+class StudentProfilePageState extends State<StudentProfilePage> {
   final _formKey = GlobalKey<FormState>();
   late final TextEditingController _nomeController;
   late final TextEditingController _turmaController;
@@ -20,9 +19,9 @@ class _StudentProfilePageState extends State<StudentProfilePage> {
   @override
   void initState() {
     super.initState();
-    _nomeController = TextEditingController(text: widget.estudante.nome);
-    _turmaController = TextEditingController(text: widget.estudante.turma);
-    _matriculaController = TextEditingController(text: widget.estudante.matricula);
+    _nomeController = TextEditingController();
+    _turmaController = TextEditingController();
+    _matriculaController = TextEditingController();
   }
 
   @override
@@ -35,24 +34,26 @@ class _StudentProfilePageState extends State<StudentProfilePage> {
 
   Future<void> _saveStudentData() async {
     if (_formKey.currentState!.validate()) {
-      widget.estudante.nome = _nomeController.text;
-      widget.estudante.turma = _turmaController.text;
-      widget.estudante.matricula = _matriculaController.text;
-
-      await FirebaseFirestore.instance
+      final doc = await FirebaseFirestore.instance
           .collection('estudantes')
-          .doc(widget.estudante.id)
-          .set({
-        'nome': widget.estudante.nome,
-        'turma': widget.estudante.turma,
-        'matricula': widget.estudante.matricula,
-        'palestrasInscritas': widget.estudante.palestrasInscritas,
-      }, SetOptions(merge: true));
+          .add({
+        'nome': _nomeController.text,
+        'turma': _turmaController.text,
+        'matricula': _matriculaController.text,
+      });
+
+      final estudante = Estudante(
+        id: doc.id,
+        nome: _nomeController.text,
+        turma: _turmaController.text,
+        matricula: _matriculaController.text,
+        palestrasInscritas: [],
+      );
 
       Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => StudentLecturesPage(estudante: widget.estudante),
+          builder: (context) => StudentLecturesPage(estudante: estudante),
         ),
       );
     }
@@ -108,7 +109,7 @@ class _StudentProfilePageState extends State<StudentProfilePage> {
               ElevatedButton(
                 onPressed: _saveStudentData,
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.green,
+                  backgroundColor: Color.fromARGB(255, 163, 130, 248),
                   padding: const EdgeInsets.symmetric(vertical: 16),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10),

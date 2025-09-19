@@ -17,13 +17,16 @@ class Estudante {
 
   factory Estudante.fromFirestore(DocumentSnapshot doc) {
     final data = doc.data() as Map<String, dynamic>;
+    final palestrasInscritasData = data['palestrasInscritas'] as List<dynamic>?;
+
     return Estudante(
       id: doc.id,
       nome: data['nome'] ?? '',
       turma: data['turma'] ?? '',
       matricula: data['matricula'] ?? '',
-      palestrasInscritas:
-          (data['palestrasInscritas'] as List<dynamic>?)?.cast<String>() ?? [],
+      palestrasInscritas: palestrasInscritasData != null
+        ? palestrasInscritasData.map((e) => e.toString()).toList()
+        : [],
     );
   }
 }
