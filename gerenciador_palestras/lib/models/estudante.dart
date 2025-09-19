@@ -23,7 +23,7 @@ class Estudante {
       turma: data['turma'] ?? '',
       matricula: data['matricula'] ?? '',
       palestrasInscritas:
-        (data['palestrasInscritas'] as List<dynamic>?)?.cast<String>() ?? [],
+          (data['palestrasInscritas'] as List<dynamic>?)?.cast<String>() ?? [],
     );
   }
 }
