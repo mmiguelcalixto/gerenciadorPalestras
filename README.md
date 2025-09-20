@@ -5,7 +5,7 @@
 ![Dart](https://img.shields.io/badge/Dart-3.9.0-blueviolet)
 
 
-Este projeto é um aplicativo Flutter desenvolvido para o evento **Dia D Carreiras** do COTEMIG, permitindo que os estudantes gerenciem suas inscrições em palestras de forma simples e intuitiva. O aplicativo se conecta ao **Firebase** para armazenar e sincronizar os dados em tempo real.
+Este projeto é um aplicativo Flutter desenvolvido para o evento **Dia D Carreiras** do COTEMIG, permitindo que palestrantes cadastrem suas palestras e estudantes gerenciem suas inscrições, de forma simples e intuitiva. O aplicativo se conecta ao **Firebase** para armazenar e sincronizar os dados em tempo real.
 
 ---
 
