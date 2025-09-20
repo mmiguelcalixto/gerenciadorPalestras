@@ -15,7 +15,7 @@ Este projeto é um aplicativo Flutter desenvolvido para o evento **Dia D Carreir
 - **Inscrição e cancelamento:** O estudante pode se inscrever ou cancelar a inscrição.
 - **Gestão de perfil:** O estudante pode editar suas informações pessoais.
 - **Gerenciamento:** O palestrante pode editar ou excluir sua palestra.
--  
+   
 ---
 
 ## 🛠️ Tecnologias Utilizadas
