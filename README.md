@@ -1,5 +1,10 @@
 # Gerenciador de Palestras - Dia D Carreiras 
 
+![Status](https://img.shields.io/badge/status-concluído-green)
+![Flutter](https://img.shields.io/badge/Flutter-3.35.2-blue)
+![Dart](https://img.shields.io/badge/Dart-3.9.0-blueviolet)
+
+
 Este projeto é um aplicativo Flutter desenvolvido para o evento **"Dia D Carreiras"** do COTEMIG, permitindo que os estudantes gerenciem suas inscrições em palestras de forma simples e intuitiva. O aplicativo se conecta ao **Firebase** para armazenar e sincronizar os dados em tempo real.
 
 ---
