@@ -54,11 +54,11 @@ flutter pub get
 
 3. Configure o Firebase
 
-         Crie um projeto no console do Firebase.
+   Crie um projeto no console do Firebase.
 
-         Siga as instruções para adicionar um aplicativo Flutter ao seu projeto Firebase.
+   Siga as instruções para adicionar um aplicativo Flutter ao seu projeto Firebase.
 
-         Baixe o arquivo de configuração firebase_options.dart e coloque-o na pasta lib.
+   Baixe o arquivo de configuração firebase_options.dart e coloque-o na pasta lib.
 
 4. Rode o aplicativo!!
 
