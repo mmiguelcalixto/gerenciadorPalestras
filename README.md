@@ -28,7 +28,10 @@ Este projeto é um aplicativo Flutter desenvolvido para o evento **Dia D Carreir
 
 ## 📸 Imagens do Projeto
 
-
+![1](images-readme/1.jpeg)
+![2](images-readme/2.jpeg)
+![3](images-readme/3.jpeg)
+![4](images-readme/4.jpeg)
 ---
 
 ## ⚙️ Como Configurar e Rodar o Projeto
