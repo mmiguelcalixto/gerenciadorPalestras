@@ -20,7 +20,7 @@ Este projeto é um aplicativo Flutter desenvolvido para o evento **Dia D Carreir
 
 ## 🛠️ Tecnologias Utilizadas
 
-- **Flutter
+- **Flutter**
 - **Firebase Core**
 - **Firebase Firestore**
 
